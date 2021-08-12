@@ -64,17 +64,31 @@ botaoAdicionar.addEventListener("click",function(event){
 	// validaPlava(placaAntiga)
 
 	const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
+	const regexPlaca1 = /^[a-zA-Z]{3}[0-9][a-zA-Z][0-9]{2}$/;
+
 
 	if (regexPlaca.test(placaAntiga)) {
 		ConvertePlaca(placaAntiga)
-		var nomeCidade = document.createElement("tr")
-		nomeCidade.classList.add("nomeCidade")
+		div.innerHTML = '<span class="placa-nova">' + "<h1>" +  novaPlaca.toUpperCase() + "</h1>" + "</br>" + "Placa Mercosul";
+		form.reset();
+	} else if (regexPlaca1.test(placaAntiga)) {
+		ConvertePlaca(placaAntiga)
 		div.innerHTML = '<span class="placa-nova">' + "<h1>" +  novaPlaca.toUpperCase() + "</h1>";
 		form.reset();
 	} else {
 		div.innerHTML = "Placa invalida"
 		form.reset();
 	}
+
+	// if (regexPlaca1.test(placaAntiga)) {
+	// 	ConvertePlaca(placaAntiga)
+	// 	div.innerHTML = '<span class="placa-nova">' + "<h1>" +  novaPlaca.toUpperCase() + "</h1>" + "</br>" + "Placa Mercosul";
+	// 	form.reset();
+	// } else {
+	// 	div.innerHTML = "Placa invalida"
+	// 	form.reset();
+	// }
+
 
 	// ConvertePlaca(placaAntiga)
 
@@ -175,6 +189,62 @@ botaoAdicionar.addEventListener("click",function(event){
 
 	  }
 	}
+
+	if (placaAntiga.length == 7) {
+		switch (placaAntiga.substring(4, 5)) {
+			case "A" :
+			case "a" :
+				novaPlaca = placaAntiga.substring(0, 4) + "0" + placaAntiga.substring(5);
+				break;
+
+			case "B" :
+			case "b" :
+				novaPlaca = placaAntiga.substring(0, 4) + "1" + placaAntiga.substring(5);
+				break;
+
+			case "C" :
+			case "c" :
+				novaPlaca = placaAntiga.substring(0, 4) + "2" + placaAntiga.substring(5);
+				break;
+
+			case "D" :
+			case "d" :
+				novaPlaca = placaAntiga.substring(0, 4) + "3" + placaAntiga.substring(5);
+				break;
+
+			case "E" :
+			case "e" :
+				novaPlaca = placaAntiga.substring(0, 4) + "4" + placaAntiga.substring(5);
+				break;
+
+			case "F" :
+			case "f" :
+				novaPlaca = placaAntiga.substring(0, 4) + "5" + placaAntiga.substring(5);
+				break;
+
+			case "G" :
+			case "g" :
+				novaPlaca = placaAntiga.substring(0, 4) + "6" + placaAntiga.substring(5);
+				break;
+
+			case "H" :
+			case "h" :
+				novaPlaca = placaAntiga.substring(0, 4) + "7" + placaAntiga.substring(5);
+				break;
+
+			case "I" :
+			case "i" :
+				novaPlaca = placaAntiga.substring(0, 4) + "8" + placaAntiga.substring(5);
+				break;
+
+			case "J" :
+			case "j" :
+				novaPlaca = placaAntiga.substring(0, 4) + "9" +  placaAntiga.substring(5);
+				break;
+
+	}
+
+}
 }
 
 
