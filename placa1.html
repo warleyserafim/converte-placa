@@ -1,0 +1,187 @@
+<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+</head>
+<body>
+	<header>
+
+	</header>
+
+	<main>
+		<form id="placa">
+			<div class="grupo">
+					<label for="nome">Placa:</label>
+					<input id="placaadd" name="placa" type="text" placeholder="Digite Sua Placa" class="campo">
+			</div>
+
+			<button id="converter" class="botao bto-principal">Converter</button>
+
+
+		</form>
+
+		<div id="divResultado">
+	 </div>
+
+
+	</main>
+
+	<footer>
+
+	</footer>
+</body>
+</html>
+
+
+<script>
+
+  function pulaLinha() {
+    document.write("<br>");
+  }
+
+  function mostra(frase) {
+    document.write(frase);
+
+  }
+
+
+
+var novaPlaca;
+var div = document.getElementById("divResultado");
+var botaoAdicionar = document.querySelector("#converter");
+botaoAdicionar.addEventListener("click",function(event){
+  event.preventDefault();
+
+  var form = document.querySelector("#placa")
+
+	var placaAntiga = form.placa.value.trim();
+	// validaPlava(placaAntiga)
+
+	const regexPlaca = /^[a-zA-Z]{3}[0-9]{4}$/;
+
+	if (regexPlaca.test(placaAntiga)) {
+		ConvertePlaca(placaAntiga)
+		var nomeCidade = document.createElement("tr")
+		nomeCidade.classList.add("nomeCidade")
+		div.innerHTML = '<span class="placa-nova">' + "<h1>" +  novaPlaca.toUpperCase() + "</h1>";
+		form.reset();
+	} else {
+		div.innerHTML = "Placa invalida"
+		form.reset();
+	}
+
+	// ConvertePlaca(placaAntiga)
+
+
+
+})
+
+
+	function ConvertePlaca(placaAntiga) {
+
+		if (placaAntiga.length == 7) {
+			switch (placaAntiga.substring(4, 5)) {
+				case "0" :
+					novaPlaca = placaAntiga.substring(0, 4) + "A" + placaAntiga.substring(5);
+					break;
+
+				case "1" :
+					novaPlaca = placaAntiga.substring(0, 4) + "B" + placaAntiga.substring(5);
+					break;
+
+				case "2" :
+					novaPlaca = placaAntiga.substring(0, 4) + "C" + placaAntiga.substring(5);
+					break;
+
+				case "3" :
+					novaPlaca = placaAntiga.substring(0, 4) + "D" + placaAntiga.substring(5);
+					break;
+
+				case "4" :
+					novaPlaca = placaAntiga.substring(0, 4) + "E" + placaAntiga.substring(5);
+					break;
+
+				case "5" :
+					novaPlaca = placaAntiga.substring(0, 4) + "F" + placaAntiga.substring(5);
+					break;
+
+				case "6" :
+					novaPlaca = placaAntiga.substring(0, 4) + "G" + placaAntiga.substring(5);
+					break;
+
+				case "7" :
+					novaPlaca = placaAntiga.substring(0, 4) + "H" + placaAntiga.substring(5);
+					break;
+
+				case "8" :
+					novaPlaca = placaAntiga.substring(0, 4) + "I" + placaAntiga.substring(5);
+					break;
+
+				case "9" :
+					novaPlaca = placaAntiga.substring(0, 4) + "J" +  placaAntiga.substring(5);
+					break;
+
+		}
+
+	}
+
+	if (placaAntiga.length == 8) {
+	    switch (placaAntiga.substring(5, 6)) {
+	      case "0" :
+	        novaPlaca = placaAntiga.substring(0, 5) + "A" + placaAntiga.substring(6);
+	        break;
+
+			  case "1" :
+			    novaPlaca = placaAntiga.substring(0, 5) + "B" + placaAntiga.substring(6);
+			    break;
+
+				case "2" :
+					novaPlaca = placaAntiga.substring(0, 5) + "C" + placaAntiga.substring(6);
+					break;
+
+				case "3" :
+					novaPlaca = placaAntiga.substring(0, 5) + "D" + placaAntiga.substring(6);
+					break;
+
+				case "4" :
+					novaPlaca = placaAntiga.substring(0, 5) + "E" + placaAntiga.substring(6);
+					break;
+
+				case "5" :
+					novaPlaca = placaAntiga.substring(0, 5) + "F" + placaAntiga.substring(6);
+					break;
+
+				case "6" :
+					novaPlaca = placaAntiga.substring(0, 5) + "G" + placaAntiga.substring(6);
+					break;
+
+				case "7" :
+					novaPlaca = placaAntiga.substring(0, 5) + "H" + placaAntiga.substring(6);
+					break;
+
+				case "8" :
+					novaPlaca = placaAntiga.substring(0, 5) + "I" + placaAntiga.substring(6);
+					break;
+
+				case "9" :
+					novaPlaca = placaAntiga.substring(0, 5) + "J" +  placaAntiga.substring(6);
+					break;
+
+	  }
+	}
+}
+
+
+	function validaPlava(placaAntiga){
+		if (placaAntiga == null || placaAntiga === "" || placaAntiga.length > 8) {
+			alert("Placa Invalida")
+		}
+}
+
+</script>
